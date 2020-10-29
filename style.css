@@ -42,18 +42,22 @@ body {
     background: lightgrey;
 }
 
-.square {
+.square1 {
     background-color: orangered;
 }
 
+.square2 {
+    background-color: royalblue;
+}
+
 .player1turn {
-    font-size: 25px;
+    font-size: 20px;
     font-weight: bolder;
     color: orangered;
 }
 
 .player2turn {
-    font-size: 25px;
+    font-size: 20px;
     font-weight: bolder;
     color: royalblue;
 }
