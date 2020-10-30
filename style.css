@@ -50,6 +50,12 @@ body {
     background-color: royalblue;
 }
 
+#playerdisp {
+    font-size: 20px;
+    font-weight: bolder;
+    color: orangered;
+}
+
 .player1turn {
     font-size: 20px;
     font-weight: bolder;

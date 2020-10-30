@@ -50,11 +50,10 @@ function createDivGrid(divs) {
 
             // Add div to container
             document.getElementById('container').append(divEl);
-
         }
     }
+    playerDisp();
 }
-
 
 // LINE FUNCTIONS
 
