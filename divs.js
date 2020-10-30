@@ -81,12 +81,21 @@ function checkVert(row, col) {
 
     // Check Lines
     if (col == 0) {
-        checkRight(row, col);
+        let rightCellComplete = checkRight(row, col);
+        if (rightCellComplete == false) {
+            changePlayer(row, col);
+        }
     } else if (col == 14) {
-        checkLeft(row, col);
+        let leftCellComplete = checkLeft(row, col);
+        if (leftCellComplete == false) {
+            changePlayer(row, col);
+        }
     } else {
-        checkLeft(row, col);
-        checkRight(row, col);
+        let leftCellComplete = checkLeft(row, col);
+        let rightCellComplete = checkRight(row, col);
+        if (leftCellComplete == false && rightCellComplete == false) {
+            changePlayer(row, col);
+        }
     }
 }
 
@@ -95,11 +104,20 @@ function checkHorz(row, col) {
 
     // Check Lines
     if (row == 0) {
-        checkBottom(row, col);
+        let bottomCellComplete = checkBottom(row, col);
+        if (bottomCellComplete == false) {
+            changePlayer(row, col);
+        }
     } else if (row == 14) {
-        checkTop(row, col);
+        let topCellComplete = checkTop(row, col);
+        if (topCellComplete == false) {
+            changePlayer(row, col);
+        }
     } else {
-        checkTop(row, col);
-        checkBottom(row, col);
+        let topCellComplete = checkTop(row, col);
+        let bottomCellComplete = checkBottom(row, col);
+        if (topCellComplete == false && bottomCellComplete == false) {
+            changePlayer(row, col);
+        }
     }
 }
