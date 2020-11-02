@@ -66,14 +66,15 @@ function lineClicked(event) {
     if (divs[row][col] == 1 || divs[row][col] == 2) {
         event.target.classList.add('highlight');
         divs[row][col] = 4;
+
+        // Determine if line is vertical or horizontal
+        if (row % 2 == 0) {
+            checkHorz(row, col);
+        } else {
+            checkVert(row, col);
+        }
     }
 
-    // Determine if line is vertical or horizontal
-    if (row % 2 == 0) {
-        checkHorz(row, col);
-    } else {
-        checkVert(row, col);
-    }
 }
 
 // Processing Vertical Lines
@@ -121,3 +122,5 @@ function checkHorz(row, col) {
         }
     }
 }
+
+

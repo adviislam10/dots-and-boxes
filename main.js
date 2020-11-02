@@ -14,7 +14,7 @@ createDivGrid(divs);
 // Cell Complete Function
 function cellComplete(row, col) {
     document.getElementById('cell' + row + '-' + col).classList.add('square' + playerturn);
-    playerScore();
+    playerScore()
 }
 
 // Check Cell Functions
@@ -66,19 +66,16 @@ function playerScore() {
 }
 
 // Change Player Turn
-function changePlayer(row, col) {
+function changePlayer() {
     // Check if line clicked was blank
-    if ([row][col] == 1 || [row][col] == 2) {
-        if (playerturn == 1) {
-            playerturn = 2;
-        } else if (playerturn == 2) {
-            playerturn = 1;
-        }
-
-        //Display Player Turn
-        playerDisp();
+    if (playerturn == 1) {
+        playerturn = 2;
+    } else if (playerturn == 2) {
+        playerturn = 1;
     }
 
+    //Display Player Turn
+    playerDisp();
 }
 
 //Player Turn Display
@@ -86,11 +83,12 @@ function playerDisp() {
     if (playerturn == 1) {
         // Add player turn
         document.getElementById('playerdisp').innerHTML = 'PLAYER 1 TURN';
+        document.getElementById('playerdisp').classList.remove('player2turn');
         document.getElementById('playerdisp').classList.add('player1turn');
     } else if (playerturn == 2) {
         // Add player turn
         document.getElementById('playerdisp').innerHTML = 'PLAYER 2 TURN';
+        document.getElementById('playerdisp').classList.remove('player1turn');
         document.getElementById('playerdisp').classList.add('player2turn');
     }
-
 }
