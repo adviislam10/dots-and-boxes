@@ -63,6 +63,8 @@ function playerScore() {
     } else if (playerturn == 2) {
         document.getElementById('p2score').innerHTML = player2score += 1;
     }
+    // Check for winner
+    checkWinner();
 }
 
 // Change Player Turn
@@ -90,5 +92,16 @@ function playerDisp() {
         document.getElementById('playerdisp').innerHTML = 'PLAYER 2 TURN';
         document.getElementById('playerdisp').classList.remove('player1turn');
         document.getElementById('playerdisp').classList.add('player2turn');
+    }
+}
+
+// Display Winner
+function checkWinner() {
+    if (player1score + player2score == 49) {
+        if (player1score > player2score) {
+            document.getElementById('winner').innerHTML = 'PLAYER 1 WINS!'
+        } else if (player2score > player1score) {
+            document.getElementById('winner').innerHTML = 'PLAYER 2 WINS!'
+        }
     }
 }
